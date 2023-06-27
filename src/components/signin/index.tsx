@@ -1,4 +1,5 @@
 import { FormEvent, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { isValid } from '../common/utils';
 import { signin } from '../../api/auth';
 import useInputValue from '../../hooks/useInputValue';
@@ -9,12 +10,21 @@ export default function SignInForm() {
   const [email, handleEmailChange] = useInputValue();
   const [password, handlePasswordChange] = useInputValue();
   const { setToken } = useToken();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const response = await signin({ email, password });
-    setToken(response.data.access_token);
+    try {
+      const response = await signin({ email, password });
+
+      if (response.status === 200) {
+        setToken(response.data.access_token);
+        navigate('/todo');
+      }
+    } catch (err) {
+      alert('아이디나 비밀번호를 확인해주세요.');
+    }
   };
 
   useEffect(() => {
