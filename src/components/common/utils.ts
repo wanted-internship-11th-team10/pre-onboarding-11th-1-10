@@ -2,7 +2,7 @@ type RegType = 'email' | 'password';
 
 const regs = {
   email: /.@./,
-  password: /.[8,]/,
+  password: /.{8,}/,
 };
 
 export function isValid(type: RegType, value: string) {
