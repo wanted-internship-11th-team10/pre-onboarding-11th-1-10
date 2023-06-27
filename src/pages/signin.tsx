@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { loginMemberApi } from '../lib/customAxios';
 import { isValidate } from './signup';
 
 const signin = () => {
+  const navigate = useNavigate();
   const [id, setId] = useState<string>('');
   const [pw, setPw] = useState<string>('');
   const [disable, setDisable] = useState<boolean>(true);
@@ -10,6 +12,7 @@ const signin = () => {
   const loginMember = async () => {
     try {
       await loginMemberApi(id, pw);
+      navigate('/todo');
     } catch (err) {
       console.log(err);
     }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { postMemberApi } from '../lib/customAxios';
 
 // 이메일 패스워드 유효성 검사
@@ -11,6 +12,7 @@ export const isValidate = (_id: string, _pw: string) => {
 };
 
 const signup = () => {
+  const navigate = useNavigate();
   const [id, setId] = useState<string>('');
   const [pw, setPw] = useState<string>('');
   const [disable, setDisable] = useState<boolean>(true);
@@ -18,6 +20,7 @@ const signup = () => {
   const postMember = async () => {
     try {
       postMemberApi(id, pw);
+      navigate('/signin')
     } catch (err) {
       console.log(err);
     }
