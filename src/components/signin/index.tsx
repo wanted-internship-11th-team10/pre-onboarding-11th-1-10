@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { isValid } from '../common/utils';
-import useInputValue from '../../hooks/useInputValue';
 import { signin } from '../../api/auth';
+import useInputValue from '../../hooks/useInputValue';
 
 export default function SignInForm() {
   const [email, handleEmailChange] = useInputValue();
