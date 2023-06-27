@@ -1,15 +1,37 @@
-import { Signup, Signin } from './pages';
 import { Route, Routes } from 'react-router-dom';
-import AuthCheck from './authCheck';
+import PrivateRoute from './components/PrivateRoute';
+import PublicRoute from './components/PublicRoute';
+import { Signin, Signup, Todo } from './pages';
 
 const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<AuthCheck />}>
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/signup" element={<Signup />} />
-        </Route>
+        <Route
+          path="/signin"
+          element={
+            <PublicRoute>
+              <Signin />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <PublicRoute>
+              <Signup />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/todo"
+          element={
+            <PrivateRoute>
+              <Todo />
+            </PrivateRoute>
+          }
+        />
+        <Route path="*" element={<div>없는 페이지 입니다.</div>} />
       </Routes>
     </div>
   );
