@@ -8,3 +8,7 @@ interface UserData {
 export async function signin(data: UserData) {
   return apiInstance.post('/auth/signin', data);
 }
+
+export async function signup(data: UserData) {
+  return apiInstance.post('/auth/signup', data);
+}

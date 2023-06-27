@@ -1,17 +1,28 @@
 import { FormEvent, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { isValid } from '../common/utils';
-import { signin } from '../../api/auth';
+import { signup } from '../../api/auth';
 import useInputValue from '../../hooks/useInputValue';
 
 export default function SignUpForm() {
   const [valid, setValid] = useState(false);
   const [email, handleEmailChange] = useInputValue();
   const [password, handlePasswordChange] = useInputValue();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const response = await signin({ email, password });
+    try {
+      const response = await signup({ email, password });
+
+      if (response.status === 201) {
+        alert('회원가입이 완료되었습니다!');
+        navigate('/signin');
+      }
+    } catch (err) {
+      alert('회원가입에 실패했습니다. 다시 시도해주세요. ');
+    }
   };
 
   useEffect(() => {
