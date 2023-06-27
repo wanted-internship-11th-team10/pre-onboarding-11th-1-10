@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import { Signin, Signup } from './pages';
 
 function App() {
-  const [, setAccessToken] = useState(() => window.localStorage.getItem('access_token') ?? '');
+  const [accessToken, setAccessToken] = useState(() => window.localStorage.getItem('access_token') ?? '');
 
   const updateToken = (token: string) => {
     window.localStorage.setItem('access_token', token);
@@ -15,8 +15,12 @@ function App() {
     <Container>
       <BrowserRouter>
         <Routes>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signin" element={<Signin updateToken={updateToken} />} />
+          <Route path="/" element={accessToken ? <Navigate to="/todo" /> : <Navigate to="/signup" />} />
+          <Route path="/signup" element={accessToken ? <Navigate to="/todo" /> : <Signup />} />
+          <Route
+            path="/signin"
+            element={accessToken ? <Navigate to="/todo" /> : <Signin updateToken={updateToken} />}
+          />
         </Routes>
       </BrowserRouter>
     </Container>
