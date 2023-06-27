@@ -1,4 +1,5 @@
-const App = () => {
+
+const signin = () => {
   return (
     <div>
       
@@ -6,4 +7,4 @@ const App = () => {
   )
 }
 
-export default App
+export default signin
