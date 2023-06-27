@@ -5,6 +5,7 @@ import NotFound from './pages/NotFound';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Todo from './pages/Todo';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -12,9 +13,15 @@ function App() {
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Navigate replace to="/signin" />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/todo" element={<Todo />} />
+        <Route element={<PrivateRoute authRequire={false} />}>
+          <Route path="/signup" element={<SignUp />} />
+        </Route>
+        <Route element={<PrivateRoute authRequire={false} />}>
+          <Route path="/signin" element={<SignIn />} />
+        </Route>
+        <Route element={<PrivateRoute authRequire={true} />}>
+          <Route path="/todo" element={<Todo />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
