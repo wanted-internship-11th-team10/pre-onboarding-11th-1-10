@@ -2,6 +2,15 @@ import { useEffect, useState } from 'react';
 import { postMemberApi } from '../lib/customAxios';
 import { useNavigate } from 'react-router-dom';
 
+// 이메일 패스워드 유효성 검사
+export const isValidate = (_id: string, _pw: string) => {
+  const regexId = /@/g; // '@' 포함
+  const regexPw = /.{8,}/g; // 8자 이상
+
+  if (regexId.test(_id) && regexPw.test(_pw)) return false;
+  else return true;
+};
+
 const signup = () => {
   const navigate = useNavigate();
   const [id, setId] = useState<string>('');
@@ -15,14 +24,6 @@ const signup = () => {
     } catch (err) {
       console.log(err);
     }
-  };
-  // 이메일 패스워드 유효성 검사
-  const isValidate = (_id: string, _pw: string) => {
-    const regexId = /@/g; // '@' 포함
-    const regexPw = /.{8,}/g; // 8자 이상
-
-    if (regexId.test(_id) && regexPw.test(_pw)) return false;
-    else return true;
   };
 
   useEffect(() => {
