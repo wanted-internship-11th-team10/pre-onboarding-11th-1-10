@@ -33,9 +33,15 @@ export default function SignUpForm() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="email" placeholder="이메일" value={email} onChange={handleEmailChange} />
-        <input type="password" placeholder="비밀번호" value={password} onChange={handlePasswordChange} />
-        <button type="submit" disabled={!valid}>
+        <input data-testid="email-input" type="email" placeholder="이메일" value={email} onChange={handleEmailChange} />
+        <input
+          data-testid="password-input"
+          type="password"
+          placeholder="비밀번호"
+          value={password}
+          onChange={handlePasswordChange}
+        />
+        <button data-testid="signup-button" type="submit" disabled={!valid}>
           회원가입
         </button>
       </form>
