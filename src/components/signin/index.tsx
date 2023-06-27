@@ -2,17 +2,19 @@ import { FormEvent, useEffect, useState } from 'react';
 import { isValid } from '../common/utils';
 import { signin } from '../../api/auth';
 import useInputValue from '../../hooks/useInputValue';
+import useToken from '../../hooks/useToken';
 
 export default function SignInForm() {
+  const [valid, setValid] = useState(false);
   const [email, handleEmailChange] = useInputValue();
   const [password, handlePasswordChange] = useInputValue();
-  const [valid, setValid] = useState(false);
+  const { setToken } = useToken();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const response = await signin({ email, password });
-    console.log(response.data);
+    setToken(response.data.access_token);
   };
 
   useEffect(() => {
