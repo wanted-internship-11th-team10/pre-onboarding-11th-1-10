@@ -50,12 +50,7 @@ const signup = () => {
           setPw(e.target.value);
         }}
       />
-      <button
-        disabled={disable}
-        onClick={() => {
-          postMember();
-        }}
-      >
+      <button disabled={disable} onClick={postMember}>
         회원가입
       </button>
     </div>
