@@ -1,2 +1,16 @@
 # pre-onboarding-11th-1-10
-프론트엔드 11차 1주차 10팀 
+- 진현우
+## route
+- src
+    - components
+        - PrivateRoute.tsx
+        - PublicRoute.tsx
+    - lib
+        - customAxios.ts
+    - pages
+        - signup.tsx
+        - signin.tsx
+        - todo.tsx
+        - NotFound.tsx
+    - App.tsx
+    - index.tsx
