@@ -1,6 +1,6 @@
 import { useState, ChangeEventHandler } from 'react';
 import { useInput } from '../hooks';
-import { type Todo } from '../pages/TodoPage';
+import { type Todo } from '../context';
 import { useHandleTodo } from '../context';
 import styled from 'styled-components';
 

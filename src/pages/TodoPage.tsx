@@ -2,13 +2,6 @@ import styled from 'styled-components';
 import { TodoProvider } from '../context';
 import { TodoCreator, TodoList } from '../components';
 
-export type Todo = {
-  id: number;
-  todo: string;
-  isCompleted: boolean;
-  userId: number;
-};
-
 export const TodoPage = () => {
   return (
     <TodoProvider>

@@ -1,5 +1,5 @@
 import { apiInstance } from '.';
-import { type Todo } from '../pages/TodoPage';
+import { type Todo } from '../context';
 import { type Status } from './auth';
 
 type GetTodosResponse = Status & {

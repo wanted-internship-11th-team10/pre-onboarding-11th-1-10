@@ -1,7 +1,13 @@
 import { ReactNode, useEffect, useReducer } from 'react';
 import * as api from '../api/todo';
-import { type Todo } from '../pages/TodoPage';
 import { TodoContext, TodoHandleContext } from './TodoContext';
+
+export type Todo = {
+  id: number;
+  todo: string;
+  isCompleted: boolean;
+  userId: number;
+};
 
 type ActionType =
   | { type: 'LOAD'; todos: Todo[] }

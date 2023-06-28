@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { type Todo } from '../pages/TodoPage';
+import { type Todo } from '../context';
 
 export const TodoContext = createContext<Todo[]>([]);
 export const TodoHandleContext = createContext<{
