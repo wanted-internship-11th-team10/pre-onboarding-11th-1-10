@@ -31,6 +31,7 @@ export function SignupPage() {
         placeholder="email"
         value={email}
         onChange={onChange}
+        autoFocus
       />
       <input
         type="password"
