@@ -37,6 +37,7 @@ const signup = () => {
         id="id"
         type="text"
         value={id}
+        data-testid="email-input"
         onChange={(e) => {
           setId(e.target.value);
         }}
@@ -45,12 +46,13 @@ const signup = () => {
       <input
         id="password"
         type="password"
+        data-testid="password-input"
         value={pw}
         onChange={(e) => {
           setPw(e.target.value);
         }}
       />
-      <button disabled={disable} onClick={postMember}>
+      <button data-testid="signup-button" disabled={disable} onClick={postMember}>
         회원가입
       </button>
     </div>

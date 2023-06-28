@@ -30,6 +30,7 @@ const signin = () => {
         id="id"
         type="text"
         value={id}
+        data-testid="email-input"
         onChange={(e) => {
           setId(e.target.value);
         }}
@@ -38,12 +39,13 @@ const signin = () => {
       <input
         id="password"
         type="password"
+        data-testid="password-input"
         value={pw}
         onChange={(e) => {
           setPw(e.target.value);
         }}
       />
-      <button disabled={disable} onClick={loginMember}>
+      <button data-testid="signin-button" disabled={disable} onClick={loginMember}>
         로그인
       </button>
     </div>
