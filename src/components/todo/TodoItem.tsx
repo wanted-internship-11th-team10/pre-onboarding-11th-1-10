@@ -35,6 +35,7 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
     try {
       const result = await updateTodo(data);
       handleUpdateTodo(result.data);
+      setIsUpdateMode(false);
     } catch (err) {
       alert('투두 수정에 실패했습니다. 다시 시도해주세요.');
     }
