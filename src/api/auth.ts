@@ -17,10 +17,10 @@ type SigninResponse = Status & {
   };
 };
 
-export async function signup(data: SignupRequest): Promise<SignupResponse> {
+export function signup(data: SignupRequest): Promise<SignupResponse> {
   return apiInstance.post('/auth/signup', data);
 }
 
-export async function signin(data: SigninRequest): Promise<SigninResponse> {
+export function signin(data: SigninRequest): Promise<SigninResponse> {
   return apiInstance.post('/auth/signin', data);
 }
