@@ -16,8 +16,13 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
     setIsCompleted(!isCompleted);
   };
 
-  const handleModeChagne = () => {
-    setIsUpdateMode(!isUpdateMode);
+  const handleUpdateMode = () => {
+    setIsUpdateMode(true);
+  };
+
+  const handleUpdateCancle = () => {
+    setIsUpdateMode(false);
+    setTodoTitle(todo.todo);
   };
 
   const handleUpdatedTodoChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +46,7 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
       {!isUpdateMode && (
         <>
           <span>{todo.todo}</span>
-          <button onClick={handleModeChagne}>수정</button>
+          <button onClick={handleUpdateMode}>수정</button>
           <button>삭제</button>
         </>
       )}
@@ -49,7 +54,7 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
         <>
           <input type="text" value={todoTitle} onChange={handleUpdatedTodoChange} />
           <button onClick={handleSubmit}>제출</button>
-          <button onClick={handleModeChagne}>취소</button>
+          <button onClick={handleUpdateCancle}>취소</button>
         </>
       )}
     </div>
