@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
-import { Signin, Signup, Todo } from './pages';
+import { Signin, Signup, Todo, NotFound } from './pages';
 
 const App = () => {
   return (
@@ -31,7 +31,7 @@ const App = () => {
             </PrivateRoute>
           }
         />
-        <Route path="*" element={<div>없는 페이지 입니다.</div>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
