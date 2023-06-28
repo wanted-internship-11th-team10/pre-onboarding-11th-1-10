@@ -19,7 +19,7 @@ export const Routes = () => {
         <Route path="/todo" element={<div>TODO</div>} />
       </Route>
 
-      <Route path="/" element={<Navigate to="/todo" />} />
+      <Route path="/" element={<Navigate to="/todo" replace />} />
       <Route path="*" element={<div>Not Found Page</div>} />
     </ReactRouterRoutes>
   );
