@@ -3,18 +3,19 @@ import { apiInstance } from '.';
 
 const TODO = '/todos';
 
-type Todo = { todo: string };
+type TodoTitle = { todo: string };
 
-export type TodoItem = Todo & {
+export type Todo = {
+  todo: string;
   id: number;
   isCompleted: boolean;
   userId: number;
 };
 
-type TodoRequest = Todo;
+type TodoRequest = TodoTitle;
 
 type TodoResponse = AxiosResponse & {
-  data: TodoItem;
+  data: Todo;
 };
 
 export const getTodos = async () => {

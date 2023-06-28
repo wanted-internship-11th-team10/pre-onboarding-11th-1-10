@@ -1,10 +1,10 @@
 import { createContext } from 'react';
-import { TodoItem } from '../../../api/todo';
+import { Todo } from '../../../api/todo';
 
 type TodoContextValue = {
-  todos: TodoItem[];
-  handleCreateTodo: (created: TodoItem) => void;
-  handleUpdateTodo: (updated: TodoItem) => void;
+  todos: Todo[];
+  handleCreateTodo: (created: Todo) => void;
+  handleUpdateTodo: (updated: Todo) => void;
   handleDeleteTodo: (id: number) => void;
 };
 

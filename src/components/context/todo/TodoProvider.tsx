@@ -1,13 +1,13 @@
 import { PropsWithChildren, useEffect, useState } from 'react';
-import { TodoItem, getTodos } from '../../../api/todo';
+import { Todo, getTodos } from '../../../api/todo';
 import { TodoContext } from './TodoContext';
 
 export const TodoProvider = ({ children }: PropsWithChildren) => {
-  const [todos, setTodos] = useState<TodoItem[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
-  const handleCreateTodo = (created: TodoItem) => setTodos((todos) => [...todos, created]);
+  const handleCreateTodo = (created: Todo) => setTodos((todos) => [...todos, created]);
 
-  const handleUpdateTodo = (updated: TodoItem) => {
+  const handleUpdateTodo = (updated: Todo) => {
     setTodos(
       todos.map((todo) => {
         if (updated.id === todo.id) return updated;
