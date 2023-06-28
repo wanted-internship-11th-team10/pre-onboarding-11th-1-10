@@ -1,8 +1,10 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { createTodo } from '../../api/todo';
+import { useTodoContext } from '../../hooks';
 
 export const TodoForm = () => {
   const [todoInput, setTodoInput] = useState<string>('');
+  const { handleCreateTodo } = useTodoContext();
 
   const handleTodoInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setTodoInput(event.target.value);
@@ -13,7 +15,7 @@ export const TodoForm = () => {
 
     try {
       const result = await createTodo({ todo: todoInput });
-      console.log(result.data);
+      handleCreateTodo(result.data);
     } catch (err) {
       alert('투두 생성에 실패했습니다. 다시 시도해주세요.');
     }
