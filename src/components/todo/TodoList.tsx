@@ -1,4 +1,5 @@
 import { useTodoContext } from '../../hooks';
+import { TodoItem } from './TodoItem';
 
 export const TodoList = () => {
   const { todos } = useTodoContext();
@@ -6,7 +7,7 @@ export const TodoList = () => {
   return (
     <div>
       {todos.map((todo) => (
-        <div key={todo.id}>{todo.todo}</div>
+        <TodoItem key={todo.id} todo={todo} />
       ))}
     </div>
   );
