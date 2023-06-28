@@ -27,12 +27,20 @@ export const AuthForm = ({ testId, title, onSubmit }: AuthFormProps) => {
         data-testid="email-input"
         id="email"
         type="text"
+        name="email"
         value={email}
         onChange={onChange}
         placeholder="example@domain.com"
       />
       <label htmlFor="password">Password:</label>
-      <Input data-testid="password-input" id="password" type="password" value={password} onChange={onChange} />
+      <Input
+        data-testid="password-input"
+        id="password"
+        type="password"
+        name="password"
+        value={password}
+        onChange={onChange}
+      />
       <div>
         <Button data-testid={`${testId}-button`} type="submit" disabled={!isValid}>
           {title}
