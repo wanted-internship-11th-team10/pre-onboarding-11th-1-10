@@ -25,7 +25,7 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
     setTodoTitle(todo.todo);
   };
 
-  const handleUpdatedTodoChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleTodoTitleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setTodoTitle(event.target.value);
   };
 
@@ -51,22 +51,32 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
   };
 
   return (
-    <div>
-      <input type="checkbox" checked={isCompleted} onChange={handleCheckboxChange} />
+    <li>
       {!isUpdateMode && (
         <>
-          <span>{todo.todo}</span>
-          <button onClick={handleUpdateMode}>수정</button>
-          <button onClick={handleDelete}>삭제</button>
+          <label>
+            <input type="checkbox" checked={isCompleted} onChange={handleCheckboxChange} />
+            <span>{todo.todo}</span>
+          </label>
+          <button data-testid="modify-button" onClick={handleUpdateMode}>
+            수정
+          </button>
+          <button data-testid="delete-button" onClick={handleDelete}>
+            삭제
+          </button>
         </>
       )}
       {isUpdateMode && (
         <>
-          <input type="text" value={todoTitle} onChange={handleUpdatedTodoChange} />
-          <button onClick={handleSubmit}>제출</button>
-          <button onClick={handleUpdateCancle}>취소</button>
+          <input data-testid="modify-input" type="text" value={todoTitle} onChange={handleTodoTitleChange} />
+          <button data-testid="submit-button" onClick={handleSubmit}>
+            제출
+          </button>
+          <button data-testid="cancel-button" onClick={handleUpdateCancle}>
+            취소
+          </button>
         </>
       )}
-    </div>
+    </li>
   );
 };
