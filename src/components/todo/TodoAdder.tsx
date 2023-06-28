@@ -1,12 +1,12 @@
-import { FormEvent } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 export function TodoAdder() {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={() => {
+        console.log;
+      }}
+    >
       <input data-testid="new-todo-input" />
       <button type="submit" data-testid="new-todo-add-button">
         추가
