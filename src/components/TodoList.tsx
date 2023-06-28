@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { getTodoApi, postTodoApi, Todo } from '../api/todo';
+import { getTodoApi, Todo } from '../api/todo';
+import TodoInput from './TodoInput';
 import { TodoItem } from './TodoItem';
 
 export const TodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [text, setText] = useState<string>('');
 
   const getTodo = async () => {
     try {
@@ -12,16 +12,6 @@ export const TodoList = () => {
       setTodos(result.data);
     } catch (err) {
       alert('목록을 불러오는 데 실패하였습니다.');
-    }
-  };
-
-  const postTodo = async () => {
-    try {
-      await postTodoApi(text);
-      getTodo();
-      setText('');
-    } catch (err) {
-      alert('할일 등록에 실패하였습니다.');
     }
   };
 
@@ -39,15 +29,7 @@ export const TodoList = () => {
             })
           : '목록이 비어 있습니다'}
       </ul>
-      <div>
-        <input
-          value={text}
-          onChange={(e) => {
-            setText(e.target.value);
-          }}
-        />
-        <button onClick={postTodo}>추가</button>
-      </div>
+      <TodoInput getTodo={getTodo} />
     </div>
   );
 };
