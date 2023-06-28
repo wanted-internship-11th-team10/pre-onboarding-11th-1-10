@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { createTodo } from '../../api/todo';
 
 export const TodoForm = () => {
   const [todoInput, setTodoInput] = useState<string>('');
@@ -7,8 +8,15 @@ export const TodoForm = () => {
     setTodoInput(event.target.value);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    try {
+      const result = await createTodo({ todo: todoInput });
+      console.log(result.data);
+    } catch (err) {
+      alert('투두 생성에 실패했습니다. 다시 시도해주세요.');
+    }
   };
 
   return (
