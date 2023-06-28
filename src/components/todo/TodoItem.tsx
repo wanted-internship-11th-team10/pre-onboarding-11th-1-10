@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { Todo, updateTodo } from '../../api/todo';
+import { Todo, deleteTodo, updateTodo } from '../../api/todo';
 import { useTodoContext } from '../../hooks';
 
 type TodoItemProps = {
@@ -40,6 +40,15 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
     }
   };
 
+  const handleDelete = async () => {
+    try {
+      const result = await deleteTodo(todo.id);
+      handleDeleteTodo(todo.id);
+    } catch (err) {
+      alert('투두 삭제에 실패했습니다. 다시 시도해주세요.');
+    }
+  };
+
   return (
     <div>
       <input type="checkbox" checked={isCompleted} onChange={handleCheckboxChange} />
@@ -47,7 +56,7 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
         <>
           <span>{todo.todo}</span>
           <button onClick={handleUpdateMode}>수정</button>
-          <button>삭제</button>
+          <button onClick={handleDelete}>삭제</button>
         </>
       )}
       {isUpdateMode && (

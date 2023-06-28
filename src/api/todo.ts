@@ -31,3 +31,7 @@ export const updateTodo = async (data: Todo): Promise<TodoResponse> => {
   const body = { todo: data.todo, isCompleted: data.isCompleted };
   return apiInstance.put(`${TODO}/${id}`, body);
 };
+
+export const deleteTodo = async (id: number) => {
+  return apiInstance.delete(`${TODO}/${id}`);
+};
