@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 export const TodoForm = () => {
   const [todoInput, setTodoInput] = useState<string>('');
@@ -7,8 +7,12 @@ export const TodoForm = () => {
     setTodoInput(event.target.value);
   };
 
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input placeholder="todo" value={todoInput} onChange={handleTodoInputChange} />
       <button>추가</button>
     </form>
