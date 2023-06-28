@@ -9,5 +9,5 @@ type AuthRedirectProps = {
 
 export function AuthRedirect({ redirectPath }: AuthRedirectProps) {
   const { isLogin } = useAuth();
-  return isLogin ? <Navigate to={redirectPath} /> : <Outlet />;
+  return isLogin ? <Navigate to={redirectPath} replace /> : <Outlet />;
 }

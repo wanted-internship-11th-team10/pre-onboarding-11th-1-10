@@ -9,5 +9,5 @@ type PrivateRoutesProps = {
 
 export function PrivateRoutes({ redirectPath }: PrivateRoutesProps) {
   const { isLogin } = useAuth();
-  return isLogin ? <Outlet /> : <Navigate to={redirectPath} />;
+  return isLogin ? <Outlet /> : <Navigate to={redirectPath} replace />;
 }
