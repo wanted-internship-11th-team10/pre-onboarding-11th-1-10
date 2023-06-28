@@ -20,7 +20,7 @@ const signup = () => {
   const postMember = async () => {
     try {
       postMemberApi(id, pw);
-      navigate('/signin')
+      navigate('/signin');
     } catch (err) {
       console.log(err);
     }
