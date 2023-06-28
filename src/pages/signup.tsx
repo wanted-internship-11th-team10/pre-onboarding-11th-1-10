@@ -19,7 +19,7 @@ const signup = () => {
   // 회원 가입
   const postMember = async () => {
     try {
-      postMemberApi(id, pw);
+      await postMemberApi(id, pw);
       navigate('/signin');
     } catch (err) {
       console.log(err);
