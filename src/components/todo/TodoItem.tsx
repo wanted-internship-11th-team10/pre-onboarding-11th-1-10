@@ -41,9 +41,9 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
     }
   };
 
-  const handleDelete = async () => {
+  const handleDelete = () => {
     try {
-      const result = await deleteTodo(todo.id);
+      deleteTodo(todo.id);
       handleDeleteTodo(todo.id);
     } catch (err) {
       alert('투두 삭제에 실패했습니다. 다시 시도해주세요.');
