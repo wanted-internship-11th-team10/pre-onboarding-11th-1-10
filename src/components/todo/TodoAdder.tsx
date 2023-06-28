@@ -21,7 +21,7 @@ export function TodoAdder() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input data-testid="new-todo-input" value={todo} onChange={handleChange} />
+      <input data-testid="new-todo-input" value={todo} onChange={handleChange} autoFocus />
       <button type="submit" data-testid="new-todo-add-button">
         추가
       </button>

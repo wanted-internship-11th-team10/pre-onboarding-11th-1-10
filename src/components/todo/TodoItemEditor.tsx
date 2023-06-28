@@ -29,7 +29,7 @@ export function TodoItemEditor({ todo, onChangeViewMode }: TodoItemEditorProps) 
     <form onSubmit={handleSubmitUpdateTodo}>
       <label>
         <input type="checkbox" checked={todo.isCompleted} readOnly />
-        <input data-testid="modify-input" value={value} onChange={handleChange} />
+        <input data-testid="modify-input" value={value} onChange={handleChange} autoFocus />
       </label>
       <button type="submit" data-testid="submit-button">
         제출
