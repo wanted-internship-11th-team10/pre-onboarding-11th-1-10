@@ -4,12 +4,13 @@ interface TodoListProps {
   todos: TodoItem[];
 }
 
-export const TodoList = ({ todos }: TodoListProps) => {
+export const TodoList = () => {
   return (
     <div>
-      {todos.map((todo) => (
+      list
+      {/* {todos.map((todo) => (
         <div key={todo.id}>{todo.todo}</div>
-      ))}
+      ))} */}
     </div>
   );
 };
