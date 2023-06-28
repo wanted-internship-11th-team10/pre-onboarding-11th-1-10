@@ -19,28 +19,6 @@ export const notAuthAxios = axios.create({
     'Content-Type': 'application/json',
   },
 });
-// 투두 조회 api
-export const getTodoApi = () => {
-  return authAxios.get('/todos');
-};
-
-// 투두 등록 api
-export const postTodoApi = (text: string) => {
-  return authAxios.post('/todos', { todo: text });
-};
-
-// 투두 삭제 api
-export const deleteTodoApi = (todo_id: number) => {
-  return authAxios.delete(`/todos/${todo_id}`);
-};
-
-// 투두 수정 api
-export const updatedTodoApi = (todo_id: number, todo: string, isCompleted: boolean) => {
-  return authAxios.put(`/todos/${todo_id}`, {
-    todo,
-    isCompleted,
-  });
-};
 
 // 회원가입 api
 export const postMemberApi = (id: string, pw: string) => {
