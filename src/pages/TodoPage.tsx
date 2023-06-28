@@ -1,3 +1,7 @@
+import styled from 'styled-components';
+import { TodoProvider } from '../context';
+import { TodoCreator, TodoList } from '../components';
+
 export type Todo = {
   id: number;
   todo: string;
@@ -6,5 +10,23 @@ export type Todo = {
 };
 
 export const TodoPage = () => {
-  return <div>TodoPage</div>;
+  return (
+    <TodoProvider>
+      <Container>
+        <Title>할일 목록</Title>
+        <TodoCreator />
+        <TodoList />
+      </Container>
+    </TodoProvider>
+  );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 24px;
+`;
+
+const Title = styled.h2`
+  text-align: center;
+`;
