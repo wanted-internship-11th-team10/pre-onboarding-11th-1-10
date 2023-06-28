@@ -1,6 +1,6 @@
 import { apiInstance } from '.';
 
-type Status = {
+export type Status = {
   status: number;
 };
 
