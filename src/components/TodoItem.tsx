@@ -38,46 +38,46 @@ export const TodoItem = ({ data, getTodo }: TodoItemPropsType) => {
   };
   return (
     <li key={data.id}>
-      {isEdit ? (
-        <>
-          <div>
-            <input
-              type="text"
-              value={newTodo}
-              onChange={(e) => {
-                setNewTodo(e.target.value);
-              }}
-            />
-          </div>
-          <div>
-            <button onClick={updatedTodo}>제출</button>
-            <button
-              onClick={() => {
-                setIsEdit(false);
-              }}
-            >
-              취소
-            </button>
-          </div>
-        </>
-      ) : (
-        <>
-          <div>
+      {/* 가독성과 기능 분리를 위해 컴포넌트화가 필요해보임. 하지만 드릴링이 깊어지는 데..*/}
+      <div>
+        {isEdit ? (
+          <input
+            type="text"
+            value={newTodo}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setNewTodo(e.target.value);
+            }}
+          />
+        ) : (
+          <>
             <input id={`checkbox-${data.id}`} type="checkbox" onChange={checkedTodo} checked={data.isCompleted} />
             <label htmlFor={`checkbox-${data.id}`}>{data.todo}</label>
-          </div>
-          <div>
-            <button
-              onClick={() => {
-                setNewTodo(data.todo);
-                setIsEdit(true);
-              }}
-            >
-              수정
-            </button>
-            <button onClick={deleteTodo}>삭제</button>
-          </div>
-        </>
+          </>
+        )}
+      </div>
+      {isEdit ? (
+        <div>
+          <button onClick={updatedTodo}>제출</button>
+          <button
+            onClick={() => {
+              setIsEdit(false);
+            }}
+          >
+            취소
+          </button>
+        </div>
+      ) : (
+        <div>
+          <button
+            onClick={() => {
+              setNewTodo(data.todo);
+              setIsEdit(true);
+            }}
+          >
+            수정
+          </button>
+          <button onClick={deleteTodo}>삭제</button>
+        </div>
       )}
     </li>
   );

@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { postTodoApi } from '../api/todo';
+
 type TodoInputPropsType = {
   getTodo: () => Promise<void>;
 };
-const TodoInput = ({ getTodo }: TodoInputPropsType) => {
+
+export const TodoInput = ({ getTodo }: TodoInputPropsType) => {
   const [text, setText] = useState<string>('');
   const postTodo = async () => {
     try {
@@ -26,5 +28,3 @@ const TodoInput = ({ getTodo }: TodoInputPropsType) => {
     </div>
   );
 };
-
-export default TodoInput;

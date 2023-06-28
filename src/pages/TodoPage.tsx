@@ -9,4 +9,7 @@ export const TodoPage = () => {
   );
 };
 
-const Layout = styled.div``;
+const Layout = styled.div`
+  display: flex;
+  justify-content: center;
+`;

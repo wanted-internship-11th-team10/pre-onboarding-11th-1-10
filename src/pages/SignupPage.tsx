@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router';
 import { AuthForm } from '../components';
-import { signup } from '../api/auth';
+import { postMemberApi } from '../api/auth';
 
 export const SignupPage = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (email: string, password: string) => {
     try {
-      await signup({ email, password });
+      await postMemberApi({ email, password });
       alert('회원가입에 성공하였습니다.');
       navigate('/signin');
     } catch (err) {

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
+import { TodoInput, TodoItem } from '.';
 import { getTodoApi, Todo } from '../api/todo';
-import TodoInput from './TodoInput';
-import { TodoItem } from './TodoItem';
 
 export const TodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -23,8 +22,7 @@ export const TodoList = () => {
     <div>
       <ul>
         {todos.length != 0
-          ? todos.map((todo, i) => {
-              console.log(todo);
+          ? todos.map((todo: Todo, i: number) => {
               return <TodoItem key={i} data={todo} getTodo={getTodo} />;
             })
           : '목록이 비어 있습니다'}
