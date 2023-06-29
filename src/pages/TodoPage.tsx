@@ -11,7 +11,7 @@ export function TodoPage() {
           <Box p="30px" border="3px solid #ececec" borderRadius="10px">
             <h1 style={{ fontWeight: '600', fontSize: '20px' }}>MY TODO</h1>
             <TodoCreator />
-            <Box h="300px" overflow="scroll">
+            <Box h="300px" overflow="auto">
               <TodoList />
             </Box>
           </Box>
