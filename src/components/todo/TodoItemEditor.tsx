@@ -18,7 +18,7 @@ export function TodoItemEditor({ todo, onChangeViewMode }: TodoItemEditorProps) 
 
   const handleSubmitUpdateTodo = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!value) return;
+    if (!value.trim()) return;
 
     const updatedTodo = { ...todo, todo: value };
     onTodoUpdate(updatedTodo);
@@ -29,7 +29,7 @@ export function TodoItemEditor({ todo, onChangeViewMode }: TodoItemEditorProps) 
     <form onSubmit={handleSubmitUpdateTodo}>
       <label>
         <input type="checkbox" checked={todo.isCompleted} readOnly />
-        <input data-testid="modify-input" value={value} onChange={handleChange} autoFocus />
+        <input data-testid="modify-input" value={value} onChange={handleChange} autoFocus required />
       </label>
       <button type="submit" data-testid="submit-button">
         제출

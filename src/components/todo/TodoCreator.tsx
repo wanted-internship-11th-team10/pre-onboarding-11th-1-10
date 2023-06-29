@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 
 import { useTodo } from '../../context/todo';
 
-export function TodoAdder() {
+export function TodoCreator() {
   const { onTodoAdder } = useTodo();
 
   const [todo, setTodo] = useState('');
@@ -13,7 +13,7 @@ export function TodoAdder() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!todo) return;
+    if (!todo.trim()) return;
 
     onTodoAdder(todo);
     setTodo('');
@@ -21,7 +21,7 @@ export function TodoAdder() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input data-testid="new-todo-input" value={todo} onChange={handleChange} autoFocus />
+      <input data-testid="new-todo-input" value={todo} onChange={handleChange} autoFocus required />
       <button type="submit" data-testid="new-todo-add-button">
         추가
       </button>

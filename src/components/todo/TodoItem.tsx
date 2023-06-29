@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 
 import { Todo } from '../../api';
 import { TodoItemViewer } from './TodoItemViewer';
 import { TodoItemEditor } from './TodoItemEditor';
-import styled from 'styled-components';
 
 type TodoItemProps = {
   todo: Todo;
@@ -12,7 +12,6 @@ type TodoItemProps = {
 export function TodoItem({ todo }: TodoItemProps) {
   const [viewMode, setViewMode] = useState(true);
 
-  // GYU-TODO: 선언형이면, react-if 패턴이 더 좋을까!?
   return (
     <TodoItemWrapper>
       {viewMode ? (

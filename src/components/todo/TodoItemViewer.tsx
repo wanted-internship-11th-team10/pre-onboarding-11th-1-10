@@ -15,6 +15,10 @@ export function TodoItemViewer({ todo, onChangeEditMode }: TodoItemViewerProps) 
     onTodoUpdate({ ...todo, isCompleted });
   };
 
+  const handleTodoDelete = () => {
+    onTodoDelete(todo.id);
+  };
+
   return (
     <>
       <label>
@@ -24,7 +28,7 @@ export function TodoItemViewer({ todo, onChangeEditMode }: TodoItemViewerProps) 
       <button data-testid="modify-button" onClick={onChangeEditMode}>
         수정
       </button>
-      <button data-testid="delete-button" onClick={() => onTodoDelete(todo.id)}>
+      <button data-testid="delete-button" onClick={handleTodoDelete}>
         삭제
       </button>
     </>

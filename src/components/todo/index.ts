@@ -1,2 +1,2 @@
-export * from './TodoAdder';
+export * from './TodoCreator';
 export * from './TodoList';
