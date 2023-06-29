@@ -1,6 +1,7 @@
+import { Box } from '@chakra-ui/react';
+
 import { TodoProvider } from '../context/todo';
 import { TodoCreator, TodoList } from '../components';
-import { Box } from '@chakra-ui/react';
 
 export function TodoPage() {
   return (
