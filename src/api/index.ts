@@ -1,7 +1,7 @@
 export * from './todo';
 
 import axios from 'axios';
-import { useAuth } from '../hooks';
+import { getAuth } from '../utils';
 
 export const client = axios.create({
   baseURL: 'https://www.pre-onboarding-selection-task.shop',
@@ -11,7 +11,7 @@ export const client = axios.create({
 });
 
 client.interceptors.request.use((config) => {
-  const { isLogin, token } = useAuth();
+  const { isLogin, token } = getAuth();
 
   if (isLogin) config.headers['Authorization'] = `Bearer ${token}`;
 

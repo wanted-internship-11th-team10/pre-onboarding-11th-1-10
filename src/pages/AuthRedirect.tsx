@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-import { useAuth } from '../hooks';
+import { getAuth } from '../utils';
 import { RoutePath } from './Routes';
 
 type AuthRedirectProps = {
@@ -8,6 +8,6 @@ type AuthRedirectProps = {
 };
 
 export function AuthRedirect({ redirectPath }: AuthRedirectProps) {
-  const { isLogin } = useAuth();
+  const { isLogin } = getAuth();
   return isLogin ? <Navigate to={redirectPath} replace /> : <Outlet />;
 }

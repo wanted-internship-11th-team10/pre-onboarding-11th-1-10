@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-import { useAuth } from '../hooks';
+import { getAuth } from '../utils';
 import { RoutePath } from './Routes';
 
 type PrivateRoutesProps = {
@@ -8,6 +8,6 @@ type PrivateRoutesProps = {
 };
 
 export function PrivateRoutes({ redirectPath }: PrivateRoutesProps) {
-  const { isLogin } = useAuth();
+  const { isLogin } = getAuth();
   return isLogin ? <Outlet /> : <Navigate to={redirectPath} replace />;
 }
