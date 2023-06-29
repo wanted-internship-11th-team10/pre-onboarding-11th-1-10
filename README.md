@@ -20,6 +20,10 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<div>
+    <img src="https://github.com/wanted-internship-11th-team10/pre-onboarding-11th-1-10/assets/117281717/7eecf928-2b41-44bf-a667-ee7d35d7777e" width='500'>
+    <img src="https://github.com/wanted-internship-11th-team10/pre-onboarding-11th-1-10/assets/117281717/5d499500-d476-43d1-a031-dd2795d4f63d" width="500">
+</div>
 
 ### Built With
 
