@@ -68,6 +68,9 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
       )}
       {isUpdateMode && (
         <>
+          <label>
+            <input type="checkbox" checked={isCompleted} onChange={handleCheckboxChange} />
+          </label>
           <input data-testid="modify-input" type="text" value={todoTitle} onChange={handleTodoTitleChange} />
           <button data-testid="submit-button" onClick={handleSubmit}>
             제출

@@ -23,8 +23,8 @@ export const TodoForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input placeholder="todo" value={todoInput} onChange={handleTodoInputChange} />
-      <button>추가</button>
+      <input data-testid="new-todo-input" placeholder="todo" value={todoInput} onChange={handleTodoInputChange} />
+      <button data-testid="new-todo-add-button">추가</button>
     </form>
   );
 };
