@@ -4,6 +4,7 @@ import { PrivateRoutes } from './PrivateRoutes';
 import { AuthRedirect } from './AuthRedirect';
 import { SigninPage } from './SigninPage';
 import { SignupPage } from './SignupPage';
+import TodoPages from './TodoPages';
 
 export const Routes = () => {
   return (
@@ -14,7 +15,7 @@ export const Routes = () => {
       </Route>
 
       <Route element={<PrivateRoutes redirectPath="/signin" />}>
-        <Route path="/todo" element={<div>TODO</div>} />
+        <Route path="/todo" element={<TodoPages />} />
       </Route>
 
       <Route path="/" element={<Navigate to="/todo" replace />} />
