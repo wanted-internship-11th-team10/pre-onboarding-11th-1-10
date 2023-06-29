@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { Todo } from '../../api';
+import type { Todo } from '../../api';
 
 export const TodoContext = createContext<TodoContextType | null>(null);
 
