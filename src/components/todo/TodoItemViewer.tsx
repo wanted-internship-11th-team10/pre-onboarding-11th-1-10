@@ -22,7 +22,7 @@ export function TodoItemViewer({ todo, onChangeEditMode }: TodoItemViewerProps) 
 
   return (
     <Flex w="100%" mt="10px" justifyContent="space-between">
-      <Checkbox size="lg" checked={todo.isCompleted} onChange={handleChangeItemCompleted} colorScheme="teal">
+      <Checkbox size="lg" isChecked={todo.isCompleted} onChange={handleChangeItemCompleted} colorScheme="teal">
         {todo.todo}
       </Checkbox>
       <div>
