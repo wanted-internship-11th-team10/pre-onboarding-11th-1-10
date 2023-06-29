@@ -14,7 +14,8 @@ export type UpdateRequest = {
 type UpdateResponse = CreateResponse;
 
 export async function createTodo(todo: string): Promise<CreateResponse> {
-  return await apiInstance.post('/todos', { todo });
+  const response = await apiInstance.post('/todos', { todo });
+  return response.data;
 }
 
 export async function getTodos(): Promise<GetRespnse> {

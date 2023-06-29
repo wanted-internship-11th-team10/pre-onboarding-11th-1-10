@@ -12,6 +12,8 @@ export default function TodoItem({ todo: { id, todo, isCompleted } }: Props) {
   const [text, setText] = useState('');
   const { onUpdate, onDelete } = useTodo();
 
+  console.log(id);
+
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value);
 
   const handleCheck = () => {
