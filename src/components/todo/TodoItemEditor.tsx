@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { Box, Button, Checkbox, Input } from '@chakra-ui/react';
 
 import { Todo } from '../../api';
 import { useTodo } from '../../context/todo';
@@ -26,17 +27,17 @@ export function TodoItemEditor({ todo, onChangeViewMode }: TodoItemEditorProps) 
   };
 
   return (
-    <form onSubmit={handleSubmitUpdateTodo}>
-      <label>
-        <input type="checkbox" checked={todo.isCompleted} readOnly />
-        <input data-testid="modify-input" value={value} onChange={handleChange} autoFocus required />
-      </label>
-      <button type="submit" data-testid="submit-button">
-        제출
-      </button>
-      <button type="button" data-testid="cancel-button" onClick={onChangeViewMode}>
-        취소
-      </button>
+    <form onSubmit={handleSubmitUpdateTodo} style={{ width: '100%' }}>
+      <Box w="100%" mt="10px" display="flex" justifyContent="space-between">
+        <Checkbox size="lg" checked={todo.isCompleted} readOnly />
+        <Input w="200px" data-testid="modify-input" value={value} onChange={handleChange} autoFocus required />
+        <Button type="submit" data-testid="submit-button">
+          제출
+        </Button>
+        <Button type="button" data-testid="cancel-button" onClick={onChangeViewMode}>
+          취소
+        </Button>
+      </Box>
     </form>
   );
 }

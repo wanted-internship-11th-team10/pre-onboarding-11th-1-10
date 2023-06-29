@@ -5,12 +5,15 @@ import { Box } from '@chakra-ui/react';
 export function TodoPage() {
   return (
     <TodoProvider>
-      <Box w="500px" h="100vh" margin="0 auto" display="flex" flexDirection="column" justifyContent="center">
+      <Box h="100vh" margin="0 auto" display="flex" flexDirection="column" justifyContent="center">
         <Box display="flex" justifyContent="center">
-          <div>
+          <Box p="30px" border="3px solid #ececec" borderRadius="10px">
+            <h1>MY TODO</h1>
             <TodoCreator />
-            <TodoList />
-          </div>
+            <Box h="300px" overflow="scroll">
+              <TodoList />
+            </Box>
+          </Box>
         </Box>
       </Box>
     </TodoProvider>
