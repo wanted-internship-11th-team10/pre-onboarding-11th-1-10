@@ -11,7 +11,7 @@
     <a href="https://github.com/wanted-internship-11th-team10/pre-onboarding-11th-1-10/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://web-pre-onboarding-11th-1-10-koh2xlixy7104.sel4.cloudtype.app/signin">View Demo</a>
+    <a href="https://web-pre-onboarding-11th-1-10-koh2xlixy7104.sel4.cloudtype.app">View Demo</a>
     ·
     <a href="https://lean-mahogany-686.notion.site/Team-10-d4eeb6514bc645b8a02de96af3152dca">Notion</a>
   </p>
@@ -27,9 +27,10 @@
 * ![Axios][Axios]
 * ![reactrouter][reactrouter]
 * ![typescript][typescript]
+* ![ChakraUI][ChakraUI]
 
 ### Link
-<a href="https://web-pre-onboarding-11th-1-10-koh2xlixy7104.sel4.cloudtype.app/signin">Best TodoList</a>
+<a href="https://web-pre-onboarding-11th-1-10-koh2xlixy7104.sel4.cloudtype.app">Best TodoList</a>
 
 ### Folder Distructure
 <img width="321" alt="스크린샷 2023-06-29 오후 11 41 56" src="https://github.com/mia-seo/readme/assets/117281717/fd64da31-6ef5-4c00-9d01-573ff099eb4f">
@@ -42,17 +43,13 @@
 $ npm install
 $ npm start
 ```
-
-### Before start
-```
-$ npm run postinstall
-```
-`husky`를 설치한 후 개발을 시작합니다.
+- `"postinstall": "husky install"` 스크립트를 통해 `npm install` 시 `husky install`이 자동으로 수행됩니다.
 
 ### Branch Strategy
 - main : 배포용
 - dev : 개발용
-commit convention은 아래의 규칙을 따릅니다.
+
+### Commit Convention
 ```
 feat : 새로운 기능 추가
 fix : 버그 수정
@@ -92,3 +89,4 @@ chore : 빌드 업무 수정, 패키지 매니저 수정
 [Axios]: https://img.shields.io/badge/Axios-20232A?style=for-the-badge&logo=axios&logoColor=#5A29E4
 [reactrouter]: https://img.shields.io/badge/reactrouter-20232A?style=for-the-badge&logo=reactrouter&logoColor=CA4245
 [typescript]: https://img.shields.io/badge/TypeScript-20232A?style=for-the-badge&logo=typescript&logoColor=3178C6
+[chakraUI]: https://img.shields.io/badge/ChakraUI-20232A?style=for-the-badge&logo=chakraui&logoColor=3178C6
