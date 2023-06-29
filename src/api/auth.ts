@@ -1,26 +1,20 @@
-import { apiInstance } from '.';
+import { client } from '.';
 
-type Status = {
-  status: number;
-};
-
-type SignupRequest = {
+type SigninRequest = {
   email: string;
   password: string;
 };
-type SignupResponse = Status;
+type SignupRequest = SigninRequest;
 
-type SigninRequest = SignupRequest;
-type SigninResponse = Status & {
-  data: {
-    access_token: string;
-  };
+type SigninResponse = {
+  access_token: string;
 };
 
-export async function signup(data: SignupRequest): Promise<SignupResponse> {
-  return apiInstance.post('/auth/signup', data);
+export async function signup(data: SignupRequest): Promise<void> {
+  return client.post('/auth/signup', data);
 }
 
 export async function signin(data: SigninRequest): Promise<SigninResponse> {
-  return apiInstance.post('/auth/signin', data);
+  const response = await client.post('/auth/signin', data);
+  return response.data;
 }

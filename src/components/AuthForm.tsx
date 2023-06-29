@@ -31,6 +31,7 @@ export const AuthForm = ({ testId, title, onSubmit }: AuthFormProps) => {
         value={email}
         onChange={onChange}
         placeholder="example@domain.com"
+        autoFocus
       />
       <label htmlFor="password">Password:</label>
       <Input
