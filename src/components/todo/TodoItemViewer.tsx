@@ -22,14 +22,14 @@ export function TodoItemViewer({ todo, onChangeEditMode }: TodoItemViewerProps) 
 
   return (
     <Flex w="100%" mt="10px" justifyContent="space-between">
-      <Checkbox size="lg" checked={todo.isCompleted} onChange={handleChangeItemCompleted}>
+      <Checkbox size="lg" checked={todo.isCompleted} onChange={handleChangeItemCompleted} colorScheme="teal">
         {todo.todo}
       </Checkbox>
       <div>
-        <Button mr="5px" data-testid="modify-button" onClick={onChangeEditMode}>
+        <Button mr="5px" data-testid="modify-button" onClick={onChangeEditMode} colorScheme="teal">
           수정
         </Button>
-        <Button data-testid="delete-button" onClick={handleTodoDelete}>
+        <Button data-testid="delete-button" onClick={handleTodoDelete} colorScheme="teal">
           삭제
         </Button>
       </div>

@@ -31,10 +31,10 @@ export function TodoItemEditor({ todo, onChangeViewMode }: TodoItemEditorProps) 
       <Flex w="100%" mt="10px" justifyContent="space-between">
         <Checkbox size="lg" checked={todo.isCompleted} readOnly />
         <Input w="200px" data-testid="modify-input" value={value} onChange={handleChange} autoFocus required />
-        <Button type="submit" data-testid="submit-button">
+        <Button type="submit" data-testid="submit-button" colorScheme="teal">
           제출
         </Button>
-        <Button type="button" data-testid="cancel-button" onClick={onChangeViewMode}>
+        <Button type="button" data-testid="cancel-button" onClick={onChangeViewMode} colorScheme="teal">
           취소
         </Button>
       </Flex>

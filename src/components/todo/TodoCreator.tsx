@@ -24,7 +24,7 @@ export function TodoCreator() {
     <form onSubmit={handleSubmit}>
       <Flex>
         <Input w="300px" data-testid="new-todo-input" value={todo} onChange={handleChange} autoFocus required />
-        <Button type="submit" data-testid="new-todo-add-button">
+        <Button type="submit" data-testid="new-todo-add-button" backgroundColor="teal" color="white" colorScheme="teal">
           추가
         </Button>
       </Flex>
