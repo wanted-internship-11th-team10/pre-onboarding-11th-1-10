@@ -1,12 +1,9 @@
 import styled from 'styled-components';
+import { Center } from '@chakra-ui/react';
 import { Routes } from './pages/Routes';
 
 function App() {
-  return (
-    <Layout>
-      <Routes />
-    </Layout>
-  );
+  return <Routes />;
 }
 
 const Layout = styled.main`
