@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react';
-import { Box, Button, Checkbox } from '@chakra-ui/react';
+import { Button, Checkbox, Flex } from '@chakra-ui/react';
 
 import { useTodo } from '../../context/todo';
 import { Todo } from '../../api';
@@ -21,18 +21,18 @@ export function TodoItemViewer({ todo, onChangeEditMode }: TodoItemViewerProps) 
   };
 
   return (
-    <Box w="100%" mt="10px" display="flex" justifyContent="space-between">
+    <Flex w="100%" mt="10px" justifyContent="space-between">
       <Checkbox size="lg" checked={todo.isCompleted} onChange={handleChangeItemCompleted}>
         {todo.todo}
       </Checkbox>
-      <Box>
+      <div>
         <Button mr="5px" data-testid="modify-button" onClick={onChangeEditMode}>
           수정
         </Button>
         <Button data-testid="delete-button" onClick={handleTodoDelete}>
           삭제
         </Button>
-      </Box>
-    </Box>
+      </div>
+    </Flex>
   );
 }

@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { Box, Button, Checkbox, Input } from '@chakra-ui/react';
+import { Button, Checkbox, Flex, Input } from '@chakra-ui/react';
 
 import { Todo } from '../../api';
 import { useTodo } from '../../context/todo';
@@ -28,7 +28,7 @@ export function TodoItemEditor({ todo, onChangeViewMode }: TodoItemEditorProps) 
 
   return (
     <form onSubmit={handleSubmitUpdateTodo} style={{ width: '100%' }}>
-      <Box w="100%" mt="10px" display="flex" justifyContent="space-between">
+      <Flex w="100%" mt="10px" justifyContent="space-between">
         <Checkbox size="lg" checked={todo.isCompleted} readOnly />
         <Input w="200px" data-testid="modify-input" value={value} onChange={handleChange} autoFocus required />
         <Button type="submit" data-testid="submit-button">
@@ -37,7 +37,7 @@ export function TodoItemEditor({ todo, onChangeViewMode }: TodoItemEditorProps) 
         <Button type="button" data-testid="cancel-button" onClick={onChangeViewMode}>
           취소
         </Button>
-      </Box>
+      </Flex>
     </form>
   );
 }
