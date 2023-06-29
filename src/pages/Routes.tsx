@@ -6,7 +6,7 @@ import { SigninPage } from './SigninPage';
 import { SignupPage } from './SignupPage';
 import { TodoPage } from './TodoPage';
 
-export const Routes = () => {
+export function Routes() {
   return (
     <ReactRouterRoutes>
       <Route element={<AuthRedirect redirectPath="/todo" />}>
@@ -22,6 +22,6 @@ export const Routes = () => {
       <Route path="*" element={<div>Not Found Page</div>} />
     </ReactRouterRoutes>
   );
-};
+}
 
 export type RoutePath = '/signup' | '/signin' | '/todo';

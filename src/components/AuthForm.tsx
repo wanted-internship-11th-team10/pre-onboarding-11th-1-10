@@ -8,7 +8,7 @@ interface AuthFormProps {
   onSubmit: (email: string, pw: string) => void;
 }
 
-export const AuthForm = ({ testId, title, onSubmit }: AuthFormProps) => {
+export function AuthForm({ testId, title, onSubmit }: AuthFormProps) {
   const { email, password, isValid, onChange } = useSign();
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
@@ -86,4 +86,4 @@ export const AuthForm = ({ testId, title, onSubmit }: AuthFormProps) => {
       )}
     </form>
   );
-};
+}

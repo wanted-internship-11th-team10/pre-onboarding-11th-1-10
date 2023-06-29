@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router';
 import { AuthForm } from '../components';
 import * as api from '../api/auth';
 
-export const SignupPage = () => {
+export function SignupPage() {
   const navigate = useNavigate();
 
   const handleSubmit = async (email: string, password: string) => {
@@ -16,4 +16,4 @@ export const SignupPage = () => {
   };
 
   return <AuthForm testId="signup" title="회원가입" onSubmit={handleSubmit} />;
-};
+}

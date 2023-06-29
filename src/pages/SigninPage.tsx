@@ -3,7 +3,7 @@ import { AuthForm } from '../components';
 import * as api from '../api/auth';
 import { STORAGE_KEY, saveItem } from '../utils';
 
-export const SigninPage = () => {
+export function SigninPage() {
   const navigate = useNavigate();
 
   const handleSubmit = async (email: string, password: string) => {
@@ -18,4 +18,4 @@ export const SigninPage = () => {
   };
 
   return <AuthForm testId="signin" title="로그인" onSubmit={handleSubmit} />;
-};
+}
