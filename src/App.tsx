@@ -12,7 +12,7 @@ function App() {
 const Layout = styled.main`
   margin: 0 auto;
   width: 500px;
-  background-color: antiquewhite;
+  // background-color: antiquewhite;
   border-radius: 6px;
 `;
 
