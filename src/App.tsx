@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { Routes } from './pages/Routes';
 
 function App() {

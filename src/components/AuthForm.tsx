@@ -1,5 +1,4 @@
 import { FormEventHandler } from 'react';
-import styled from 'styled-components';
 import { useSign } from '../hooks';
 
 interface AuthFormProps {
@@ -20,10 +19,10 @@ export const AuthForm = ({ testId, title, onSubmit }: AuthFormProps) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <H2>{title}</H2>
+    <form onSubmit={handleSubmit}>
+      <h2>{title}</h2>
       <label htmlFor="email">Email:</label>
-      <Input
+      <input
         data-testid="email-input"
         id="email"
         type="text"
@@ -34,7 +33,7 @@ export const AuthForm = ({ testId, title, onSubmit }: AuthFormProps) => {
         autoFocus
       />
       <label htmlFor="password">Password:</label>
-      <Input
+      <input
         data-testid="password-input"
         id="password"
         type="password"
@@ -43,30 +42,10 @@ export const AuthForm = ({ testId, title, onSubmit }: AuthFormProps) => {
         onChange={onChange}
       />
       <div>
-        <Button data-testid={`${testId}-button`} type="submit" disabled={!isValid}>
+        <button data-testid={`${testId}-button`} type="submit" disabled={!isValid}>
           {title}
-        </Button>
+        </button>
       </div>
-    </Form>
+    </form>
   );
 };
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  padding: 0 16px 24px;
-`;
-
-const H2 = styled.h2`
-  text-align: center;
-`;
-
-const Input = styled.input`
-  margin: 12px 0 24px;
-  padding: 4px;
-`;
-
-const Button = styled.button`
-  padding: 4px 8px;
-  float: right;
-`;
