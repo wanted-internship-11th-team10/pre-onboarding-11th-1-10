@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import { Todo } from '../../api';
 import { TodoItemViewer } from './TodoItemViewer';
 import { TodoItemEditor } from './TodoItemEditor';
