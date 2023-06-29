@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { Input, Button, Flex } from '@chakra-ui/react';
 
 import { useTodo } from '../../context/todo';
 
@@ -21,10 +22,12 @@ export function TodoCreator() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input data-testid="new-todo-input" value={todo} onChange={handleChange} autoFocus required />
-      <button type="submit" data-testid="new-todo-add-button">
-        추가
-      </button>
+      <Flex>
+        <Input w="300px" data-testid="new-todo-input" value={todo} onChange={handleChange} autoFocus required />
+        <Button type="submit" data-testid="new-todo-add-button" backgroundColor="teal" color="white" colorScheme="teal">
+          추가
+        </Button>
+      </Flex>
     </form>
   );
 }

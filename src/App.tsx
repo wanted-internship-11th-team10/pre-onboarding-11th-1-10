@@ -1,19 +1,16 @@
-import styled from 'styled-components';
 import { Routes } from './pages/Routes';
+import { ChakraProvider, Container, Flex } from '@chakra-ui/react';
 
 function App() {
   return (
-    <Layout>
-      <Routes />
-    </Layout>
+    <ChakraProvider>
+      <Flex w="100vw" h="100vh" align="center" justify="center" direction="column">
+        <Container w="500px">
+          <Routes />
+        </Container>
+      </Flex>
+    </ChakraProvider>
   );
 }
-
-const Layout = styled.main`
-  margin: 0 auto;
-  width: 500px;
-  background-color: antiquewhite;
-  border-radius: 6px;
-`;
 
 export default App;
