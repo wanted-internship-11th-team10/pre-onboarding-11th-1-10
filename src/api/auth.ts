@@ -1,4 +1,4 @@
-import { apiInstance } from '.';
+import { client } from '.';
 
 type Status = {
   status: number;
@@ -18,9 +18,9 @@ type SigninResponse = Status & {
 };
 
 export async function signup(data: SignupRequest): Promise<SignupResponse> {
-  return apiInstance.post('/auth/signup', data);
+  return client.post('/auth/signup', data);
 }
 
 export async function signin(data: SigninRequest): Promise<SigninResponse> {
-  return apiInstance.post('/auth/signin', data);
+  return client.post('/auth/signin', data);
 }
