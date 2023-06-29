@@ -1,3 +1,4 @@
+import { useTodo } from '../context/TodoContext';
 import TodoItem from './TodoItem';
 
 export interface Todo {
@@ -7,5 +8,13 @@ export interface Todo {
 }
 
 export default function TodoList() {
-  return <ul></ul>;
+  const { todos } = useTodo();
+
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} />
+      ))}
+    </ul>
+  );
 }
