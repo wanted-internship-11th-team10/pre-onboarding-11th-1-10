@@ -1,5 +1,5 @@
 import { TodoProvider } from '../context/todo';
-import { TodoCreator, TodoList } from '../components/todo';
+import { TodoCreator, TodoList } from '../components';
 
 export function TodoPage() {
   return (
