@@ -82,7 +82,7 @@ chore : 빌드 업무 수정, 패키지 매니저 수정
     <td align="center" valign="top" width="14.28%"><a href="https://github.com/KIMSEUNGGYU"><img src="https://avatars.githubusercontent.com/u/45627868?v=4" width="100px;" alt="Mayank Badola"/><br /><sub><b>김승규</b></sub></a><br /></td>
     <td align="center" valign="top" width="14.28%"><a href="https://github.com/yurjune"><img src="https://avatars.githubusercontent.com/u/84958904?v=4" width="100px;" alt="Mayank Badola"/><br /><sub><b>박용헌</b></sub></a><br /></td>
     <td align="center" valign="top" width="14.28%"><a href="https://github.com/mia-seo"><img src="https://avatars.githubusercontent.com/u/117281717?v=4" width="100px;" alt="Mayank Badola"/><br /><sub><b>서지연</b><br/>팀장</sub></a><br /></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sik925"><img src="https://avatars.githubusercontent.com/u/64947440?v=4" width="100px;" alt="Mayank Badola"/><br /><sub><b>이지현</b></sub></a><br /></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sik9252"><img src="https://avatars.githubusercontent.com/u/64947440?v=4" width="100px;" alt="Mayank Badola"/><br /><sub><b>이지현</b></sub></a><br /></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/iinnu"><img src="https://avatars.githubusercontent.com/u/55791128?v=4" width="100px;" alt="Mayank Badola"/><br /><sub><b>조인후</b></sub></a><br /></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/oplidote"><img src="https://avatars.githubusercontent.com/u/69412482?v=4" width="100px;" alt="Mayank Badola"/><br /><sub><b>진현우</b></sub></a><br /></td>
   </tr>
